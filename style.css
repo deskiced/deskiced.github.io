@@ -699,9 +699,9 @@ color: grey;
 .next a {
     text-align: right;
 }
-/*---------------- video section ----------------*/
+/*---------------- imagen-background section ----------------*/
 
-.video-background {
+.imagen-background {
     position: absolute;
     right: 0;
     bottom: 0;
@@ -710,10 +710,11 @@ color: grey;
     width: auto;
     height: auto;
     z-index: 0;
+
 }
 
 @media (min-aspect-ratio:16/9) {
-    .video-background {
+    .imagen-background {
         width: 100%;
         height: auto;
     }

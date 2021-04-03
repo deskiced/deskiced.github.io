@@ -39,9 +39,7 @@
 
         <!-------------- navbar starts here -------------->
         <nav>
-            <video autoplay loop class="video-background" muted plays-inline>
-                <source src="images/videowp.mp4" type="video/mp4">
-            </video>
+            <img class="imagen-background" src="images/wp-deskiced.gif" alt="">
             <span id="brand">
                 <a style="text-decoration:none" href="index.html">Deskiced</a>
             </span>
@@ -90,10 +88,7 @@
 
         <!-------------- hero section starts here -------------->
         <div class="hero">
-            <video autoplay loop class="video-background" muted plays-inline>
-                <source src="images/videowp.mp4" type="video/mp4">
-                    
-            </video>
+            <img class="imagen-background" src="images/wp-deskiced.gif" alt="">
             <div class="header">
                 
                 <h1 class="line anim-typewriter">stay chillin', stay growing.</h1>
@@ -294,11 +289,12 @@
             new WOW().init();
 
             //<!-------------- scroll fade -------------->
-            let video = document.querySelector('video');
+            let image = document.querySelector('img');
+           
             window.addEventListener('scroll', function () {
 
                 let value = 1 + window.scrollY / -600;
-                video.style.opacity = value;
+                image.style.opacity = value;
             })
         </script>
         
