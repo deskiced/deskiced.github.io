@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
 /*---------------- basic styling ----------------*/
 html,
 body {
@@ -7,7 +9,14 @@ body {
     height: 100%;
     font-family: "Roboto Mono" !important;
     background: #0f0f0f !important;
-    color: #fff !important;
+    
+    background-size: cover;
+
+    color: #8d785b !important;
+}
+
+html {
+    overflow-x: hidden;
 }
 
 .whitespace {
@@ -19,78 +28,40 @@ body {
     .whitespace {
         display: none;
     }
-
+    
 }
 
-/*---------------- typewriter effect ----------------*/
-.line {
-    width: 24em;
-    top: 50%;
-    margin: auto;
-    border-right: 2px solid rgba(255, 255, 255, 0.75);
-    text-align: center;
-    white-space: nowrap;
-    overflow: hidden;
-    transform: translateY(-50%);
-}
-
-.anim-typewriter {
-    animation: typewriter 4s steps(40) 1s 1 normal both,
-        blinkTextCussor 500ms steps(40) infinite normal
-}
-
-@keyframes typewriter {
-    from {
-        width: 0;
-    }
-
-    to {
-        width: 18em;
-    }
-}
-
-@media (max-width: 768px) {
-    @keyframes typewriter {
-        from {
-            width: 0;
-        }
-
-        to {
-            width: 17em;
-        }
-    }
-}
-
-@keyframes blinkTextCussor {
-    from {
-        border-right-color: rgba(255, 255, 255, 0.75);
-    }
-
-    to {
-        border-right-color: transparent;
-    }
-}
 
 
 /*---------------- navigation ----------------*/
 nav {
     width: 100%;
-    background: #0f0f0f;
+    background: #0f0f0f; 
+    
     height: 80px;
-    position: fixed;
-    z-index: 1;
+    position: fixed; 
+    z-index: 2;
+    transition: top .6s;
+    
+}
+.nav-area.animate {
+    top: -80px;
+}
+.nav-area.sticky {
+    top: 0;
+    z-index: 10;
 }
 
 nav #brand {
     float: left;
     display: block;
-    margin-left: 82px;
+    margin-left: 82px; /*  82*/
     line-height: 80px;
     font-weight: bold;
 }
 
 nav #brand a {
-    color: #fff;
+    color: #8d785b;
     transition: all 0.3s ease-out;
 }
 
@@ -99,9 +70,9 @@ nav #brand a:hover {
 }
 
 nav #menu {
-    float: left;
+    float: right; /*  left */
     right: 80px;
-    position: fixed;
+    position: fixed; 
 }
 
 nav #menu li {
@@ -116,10 +87,11 @@ nav #menu li {
 
 nav #menu li span {
     font-weight: 700;
+    
 }
 
 nav #menu li a {
-    color: #fff;
+    color: #8d785b;
 }
 
 nav #menu li a:hover {
@@ -131,19 +103,20 @@ nav #menu li a:hover {
     right: 30px;
     top: 20px;
     font-weight: 300;
-    z-index: 2;
-    width: 30px;
+    z-index: 100;
+    width: 30px; /* 30px */
     height: 30px;
     cursor: pointer;
     float: right;
     transition: all 0.3s ease-out;
     visibility: hidden;
     opacity: 0;
+    
 }
 
 .close-btn {
     position: absolute;
-    right: 16px;
+    right: 47px; /* 16px */
     font-weight: 300;
     z-index: 2;
     cursor: pointer;
@@ -152,9 +125,9 @@ nav #menu li a:hover {
 }
 
 #resize {
-    z-index: 1;
+    z-index: 10;
     top: 0px;
-    position: fixed;
+    position: fixed; /*  fixed */
     background: #0f0f0f;
     width: 100%;
     height: 100%;
@@ -189,7 +162,7 @@ nav #menu li a:hover {
 }
 
 #resize #menu li a {
-    color: #fff;
+    color: #8d785b;
 }
 
 #resize #menu li a:hover {
@@ -206,9 +179,13 @@ nav #menu li a:hover {
         visibility: visible;
         opacity: 1;
         margin-top: 6px;
-        margin-right: 4px;
+        margin-right: 4px; 
+        
     }
-
+    
+    nav {
+        width: 94%;
+    }
 
     nav #brand {
         margin-left: 24px;
@@ -221,14 +198,16 @@ nav #menu li a:hover {
 
     #resize li span {
         font-weight: bolder;
+        
     }
 
     nav #menu {
         display: none;
+        
     }
 }
 
-@media(min-width: 768px){
+@media(min-width: 768px) {
     #resize {
         visibility: hidden !important;
     }
@@ -237,21 +216,27 @@ nav #menu li a:hover {
 /*---------------- hero section ----------------*/
 .hero {
     height: 100vh;
+
     display: flex;
+    /* flex */
     align-items: center;
     justify-content: center;
 }
 
 .hero h1 {
+
     font-weight: lighter;
     text-align: center;
     letter-spacing: -2px;
     line-height: 58px;
+    /* 58px */
 }
+
 
 @media(max-width: 768px) {
     .header h1 {
-        font-size: 26px;
+        font-size: 22px;
+        /* 26px */
     }
 }
 
@@ -264,7 +249,7 @@ nav #menu li a:hover {
     display: block;
     text-align: center;
     font-size: 20px;
-    z-index: 0;
+    z-index: 2;
     text-decoration: none;
     text-shadow: 0;
     width: 13px;
@@ -277,18 +262,26 @@ nav #menu li a:hover {
 }
 
 @keyframes fade_move_down {
-  0% {
-      transform: translate(0, -20px) rotate(45deg);
-      opacity: 0;
-  }
-  50% {
-      opacity: 1;
-  }
-  100% {
-    transform: translate(0, 20px) rotate(45deg);
-    opacity: 0;
-  }
+    0% {
+        transform: translate(0, -20px) rotate(45deg);
+        opacity: 0;
+    }
 
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(0, 20px) rotate(45deg);
+        opacity: 0;
+    }
+
+}
+@media(max-width: 768px) {
+    .scroll-down {
+        display: inline-block;
+       
+    }
 }
 
 
@@ -299,66 +292,71 @@ h6 {
 
 .vertical {
     margin-top: 40px;
-    border-left: 1px solid #fff;
+    border-left: 1px solid #8d785b;
     height: 10px;
-    
+
     position: absolute;
     left: 50%;
-    
+
 }
 
 .project {
     height: 500px;
 }
+
 /* -----IMAGEN 1----- */
 .project1 {
     background: url(images/techwear1.jpg) no-repeat 50% 30%;
     background-size: cover;
     transition: 1s;
 }
+
 .project1:hover {
     background: url(images/techwear1.jpg) no-repeat 100% 100%;
-    background-size: cover; 
+    background-size: cover;
     transform: scale(1.02);
     cursor: pointer;
 }
+
 .project1::after {
     content: "timeless flow.";
     font-family: "Roboto Mono";
     font-size: 36px;
     position: relative;
-    color: #fff;
+    color: #8d785b;
     display: block;
     top: 8%;
-    left: -60%;
+    left: -65%;
     right: 0;
     bottom: 0;
 }
+
 /* -----IMAGEN 2----- */
 .project2 {
-    background: url(images/techruso.jpg) no-repeat 40% 20%;
+    background: url(images/tech6.jpg) no-repeat 40% 20%;
     background-size: cover;
     transition: 1s;
 }
+
 .project2:hover {
-     background: url(images/techruso.jpg) no-repeat 40% 98%;
-    background-size: cover; 
+    background: url(images/tech6.jpg) no-repeat 40% 98%;
+    background-size: cover;
     transform: scale(1.02);
     cursor: pointer;
 }
 
- .project2::after {
+.project2::after {
     content: "foretime.";
     font-family: "Roboto Mono";
     font-size: 36px;
     position: relative;
-    color: #fff;
+    color: #8d785b;
     display: block;
     top: 80%;
-    left: 90%;
+    left: 105%;
     right: 0;
     bottom: 0;
-} 
+}
 
 
 
@@ -368,21 +366,23 @@ h6 {
     background-size: cover;
     transition: 0.9s;
 }
+
 .project3:hover {
     background: url(images/techgirl.png) no-repeat 100% 100%;
-    background-size: cover; 
+    background-size: cover;
     transform: scale(1.02);
     cursor: pointer;
 }
+
 .project3::after {
     content: "never again.";
     font-family: "Roboto Mono";
     font-size: 36px;
     position: relative;
-    color: #fff;
+    color: #8d785b;
     display: block;
     top: 80%;
-    left: -50%;
+    left: -53%;
     right: 0;
     bottom: 0;
 }
@@ -393,21 +393,23 @@ h6 {
     background-size: cover;
     transition: 1s;
 }
+
 .project4:hover {
     background: url(images/techteam.jpg) no-repeat 40% 98%;
-    background-size: cover; 
+    background-size: cover;
     transform: scale(1.02);
     cursor: pointer;
 }
+
 .project4::after {
     content: "departure.";
     font-family: "Roboto Mono";
     font-size: 36px;
     position: relative;
-    color: #fff;
+    color: #8d785b;
     display: block;
     top: 10%;
-    left: 90%;
+    left: 105%;
     right: 0;
     bottom: 0;
 }
@@ -416,12 +418,17 @@ h6 {
     .project {
         width: 90% !important;
         margin: 14px auto;
-    }
 
+    }
+  
     .vertical {
         display: none;
     }
-    .project1::after, .project2::after, .project3::after, .project4::after {
+
+    .project1::after,
+    .project2::after,
+    .project3::after,
+    .project4::after {
         display: none;
     }
 }
@@ -449,27 +456,31 @@ h6 {
 
 .info p {
     color: grey;
-    font-weight: lighter; 
+    font-weight: lighter;
 }
 
 .info li {
     font-weight: lighter;
-    color: #fff;
+    color: #8d785b;
     font-size: 18px;
     padding-left: 20px;
 }
+
 .spotify {
-   transition: 0.3s;
+    transition: 0.3s;
 }
+
 .github {
     transition: 0.3s;
 }
+
 .github:hover {
     transform: scale(1.1);
 }
+
 .spotify:hover {
- transform: scale(1.1);
- 
+    transform: scale(1.1);
+
 }
 
 /*---------------- redes ----------------*/
@@ -482,6 +493,7 @@ h6 {
     margin-right: 6px;
     background: #3b5998;
 }
+
 #ig::before {
     display: inline-block;
     content: '';
@@ -491,15 +503,7 @@ h6 {
     margin-right: 6px;
     background: #fcaf45;
 }
-#tw::before {
-    display: inline-block;
-    content: '';
-    border-radius: 100%;
-    height: 4px;
-    width: 4px;
-    margin-right: 6px;
-    background: #55acee;
-}
+
 #yt::before {
     display: inline-block;
     content: '';
@@ -509,29 +513,40 @@ h6 {
     margin-right: 6px;
     background: #c4302b;
 }
+
 .insta {
-    color: #fff;
+    color: #8d785b;
 }
+
 /*---------------- - ----------------*/
-#media, #address {
+#media,
+#address {
     text-align: right;
 }
+
 #media ul {
     list-style: none;
 }
+
 #media ul li {
     display: inline-block;
 }
 
-@media(max-width: 768px){
-    .coll, #personal, #media, #address {
+@media(max-width: 768px) {
+
+    .coll,
+    #personal,
+    #media,
+    #address {
         text-align: center;
     }
+
     .info ul {
         margin: 0 0 0 -22px;
         padding: 0;
     }
 }
+
 /*---------------- work form ----------------*/
 
 .hero-content {
@@ -548,67 +563,63 @@ h6 {
     text-align: left;
 }
 
-@media (max-width: 768px){
+@media (max-width: 768px) {
     .hero-content {
         padding-top: 50px;
         width: 96%;
         margin: 0 auto;
     }
 }
+
 /*---------------- about page ----------------*/
 .about {
     height: 500px;
     margin-top: 120px;
-    
 }
 
 .image {
-    background: url(images/wp2.jpg) no-repeat 30% 30%; 
+    background: url(images/wp.jpeg) no-repeat 30% 30%;
     background-size: cover;
     transition: 0.3s;
-    
-}
-.image:hover {
-    background: url(images/wp2.jpg) no-repeat 30% 90%;
-    background-size: cover;
-    transform: scale(1.01);  
-}
-.image2:hover {
-    background: url(images/wp4.png) no-repeat 30% 40%;
-    background-size: cover;
-    transform: scale(1.01);  
+    border-radius: 10px 20px 50px 0;
+    margin-top: 15px;
+
 }
 
-.image2 {
-    background: url(images/wp4.png) no-repeat 30% 30%; 
+.image:hover {
+    background: url(images/wp4.png) no-repeat 30% 40%;
     background-size: cover;
-    transition: 0.3s;
+    transform: scale(1.01);
 }
-.image2::after {
-    
-    content: "cabanillas alex.";
+
+.image::after {
+
+    content: "Cabanillas Alex.";
     font-family: "Roboto Mono";
     font-size: 36px;
     position: relative;
-    color: #fff;
+    color: #8d785b;
     display: block;
     top: 60%;
-    left: 65%;
+    left: 30%;
     right: 0;
     bottom: 0;
-    
+
 }
+
 @media(max-width: 768px) {
-    
+
     .vertical {
         display: none;
     }
-    .image2::after {
+
+    .image::after {
         display: none;
     }
 }
 
 /*---------------- contact form ----------------*/
+
 
 #contact-form {
     margin: 5% 1.4%;
@@ -625,7 +636,7 @@ h6 {
 }
 
 #contact-form li:last-of-type {
-border-bottom: none;
+    border-bottom: none;
 }
 
 #contact-form label {
@@ -635,7 +646,8 @@ border-bottom: none;
     padding-left: 5px;
 }
 
-#contact-form input, #contact-form textarea {
+#contact-form input,
+#contact-form textarea {
     width: 100%;
     padding: 5px;
     border: none;
@@ -667,13 +679,13 @@ textarea:focus {
     color: #dfdfdf;
     font-size: 14px;
     letter-spacing: 2px;
-} 
+}
 
- 
+
 .send:hover {
     background: #dfdfdf;
     color: #101010;
-} 
+}
 
 @media(max-width: 768px) {
     #contact-form {
@@ -684,11 +696,13 @@ textarea:focus {
 
 /*---------------- project page ----------------*/
 
-.prev, .next a {
-color: grey;
+.prev,
+.next a {
+    color: grey;
 }
 
-.next, .prev a {
+.next,
+.prev a {
     color: grey;
 }
 
@@ -699,33 +713,13 @@ color: grey;
 .next a {
     text-align: right;
 }
-/*---------------- imagen-background section ----------------*/
-
-.imagen-background {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: 0;
-
-}
-
-@media (min-aspect-ratio:16/9) {
-    .imagen-background {
-        width: 100%;
-        height: auto;
-    }
-}
 
 /*---------------- scroll section ----------------*/
 
 .scrollTop {
     position: fixed;
     bottom: 200px;
-    right: 40px;
+    right: 50px; 
     width: 40px;
     height: 40px;
     background: #fff url(images/chevron-up-sharp.svg);
@@ -734,14 +728,200 @@ color: grey;
     background-position: center;
     background-repeat: no-repeat;
     cursor: pointer;
-    
+
     z-index: 1;
     visibility: hidden;
     opacity: 0;
     transition: 0.5s;
 }
+
 .scrollTop.active {
-    
-   visibility: visible;
-   opacity: 0.5; 
+
+    visibility: visible;
+    opacity: 0.5;
 }
+@media(max-width: 768px) {
+    .scrollTop{
+        right: 80px; 
+    width: 40px;
+    }
+}
+
+/*---------- HEADER SECTION ----------*/
+.container-header {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #0f0f0f;
+    /*  #202217;  */
+    font-family: "Mak";
+    /* Mak */
+}
+
+.blocks {
+    display: flex;
+    font-size: 140px;
+    color: #8d785b;
+    /*  #8d785b; */
+    z-index: 1;
+    cursor: default;
+}
+
+
+
+.circle-shape-2 {
+    position: absolute;
+    top: 64%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+    width: 240px;
+    height: 240px;
+    background: #a83e0c;
+    /* #a83e0c;  */
+    border-radius: 100%;
+    z-index: 0;
+}
+
+.circle-shape-3 {
+    position: absolute;
+    top: 30%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    width: 140px;
+    height: 140px;
+    background: #a83e0c;
+    /* #a83e0c;  */
+    border-radius: 100%;
+    z-index: 0;
+}
+
+.wrapper-img {
+    overflow: hidden;
+    position: absolute;
+    top: 35% !important;
+    right: 18%;
+    width: 30%;
+    height: 80vh;
+    z-index: 1;
+    position: absolute;
+}
+
+.image-header {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+.image-header:hover {
+    transform: scale(1.009);
+}
+
+.box {
+    background: #0f0f0f;
+    /* #202217;  */
+    opacity: 1;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 0;
+}
+
+
+@media(max-width: 768px) {
+    .blocks{
+        display: inline-block;
+        font-size: 36px;  
+        height: 20vh;
+    }
+  
+
+    .circle-shape {
+        position: absolute;
+        width: 400px;
+        height: 400px;
+    }
+
+    .circle-shape-2 .circle-shape-3 {
+        width: 50%;
+        height: 50%;
+    }
+
+    .wrapper-img {
+        overflow: hidden;
+        position: absolute;
+        top: 35% !important;
+        right: 25%;
+        width: 65%;
+        height: 70vh;
+    }
+    .image-header {
+        width: 130%;
+        height: 130%;
+        object-fit: cover;
+    }
+    .image-header:hover {
+        display: none;
+    }
+    .box{
+        background: #0f0f0f;
+        /* #202217;  */
+        opacity: 1;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        z-index: 0;
+    }
+   
+}
+
+/*-----  RING  -----*/
+
+.ring {
+    margin: 0%;
+    padding: 0%;
+    top: 32%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    z-index: 0;
+    
+    height: 63vh;
+    opacity: 0.1;    
+}
+
+.ringOne img {
+    animation: rotateFirstRing 8s linear infinite; /* 2s */
+    width: 120%;
+    height: 180%;
+    object-fit: cover;
+}
+
+.ringTwo img {
+    animation: rotateFirstRing 8s linear infinite; /* 8s */
+    width: 120%;
+    height: 180%;
+    object-fit: cover;
+}
+
+@keyframes rotateFirstRing {
+    from {
+          transform: rotate(0deg);
+    }
+    to {
+          transform: rotate(360deg);
+    }
+}
+@media(max-width: 768px) {
+    .ring {
+        display: none;
+    }
+}
+
+

@@ -14,10 +14,6 @@
         integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous">
     </script>
 
-    <!-- Google Fonts -->
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
-    </style>
     <link rel="stylesheet" href="style.css">
 
     <!-- Animate.css -->
@@ -27,29 +23,35 @@
     <!-- JQUERY -->
     <script src="js/jquery-3.6.0.min.js"></script>
     <link rel="shortcut icon" href="images/flame.svg">
-
-
+    <!-- AnimeJS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <!-- IONICONS -->
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    
+    
 
 </head>
 
 <body>
 
     <div class="wrapper">
+        <div id="home"></div>
         <div class="scrollTop" onclick="scrollToTop()"></div>
 
-        <!-------------- navbar starts here -------------->
-        <nav>
-            <img class="imagen-background" src="images/wp-deskiced.gif" alt="">
+        <!----------------------------  navbar starts here -------------- -------------->
+        <nav class="nav-area">
+            
+            
             <span id="brand">
                 <a style="text-decoration:none" href="index.html">Deskiced</a>
             </span>
 
 
             <ul id="menu">
-                <li><a style="text-decoration:none" href="index.html">home<span>.</span></a></li>
-                <li><a style="text-decoration:none" href="work.html">projects<span>.</span></a></li>
-                <li><a style="text-decoration:none" href="about.html">about me<span>.</span></a></li>
-                <li><a style="text-decoration:none" href="contact.html">contact<span>.</span></a></li>
+                <li><a style="text-decoration:none" href="#home">home<span>.</span></a></li>
+                <li><a style="text-decoration:none" href="#projects">projects<span>.</span></a></li>
+                <li><a style="text-decoration:none" href="#about">about me<span>.</span></a></li>
+                <li><a style="text-decoration:none" href="#contact">contact<span>.</span></a></li>
             </ul>
 
             <div id="toggle">
@@ -62,15 +64,12 @@
 
         <div id="resize">
             <div class="close-btn">close</div>
-            <!-- <video autoplay loop class="video-background" muted plays-inline>
-                <source src="images/videowp.mp4" type="video/mp4">
-                    
-            </video> -->
+            
             <ul id="menu">
-                <li><a style="text-decoration:none" href="index.html">home<span>.</span></a></li>
-                <li><a style="text-decoration:none" href="work.html">projects<span>.</span></a></li>
-                <li><a style="text-decoration:none" href="about.html">about me<span>.</span></a></li>
-                <li><a style="text-decoration:none" href="contact.html">contact<span>.</span></a></li>
+                <li><a style="text-decoration:none" href="#home">home<span>.</span></a></li>
+                <li><a style="text-decoration:none" href="#projects">projects<span>.</span></a></li>
+                <li><a style="text-decoration:none" href="#about">about me<span>.</span></a></li>
+                <li><a style="text-decoration:none" href="#contact">contact<span>.</span></a></li>
             </ul>
 
         </div>
@@ -78,37 +77,56 @@
 
         <!-------------- navbar ends here -------------->
 
-       
-
-        <!-- stay chillin', stay growing.😎🙌👍💫✨🔥🧉 -->
-        <!-- Talk is cheap, show me the code. -->
-        <!-- Don't comment bad code - rewrite it. -->
-        <!-- while(true){I.Love(you);} -->
-        <!-- Can you be my private variable? -->
-
-        <!-------------- hero section starts here -------------->
-        <div class="hero">
-            <img class="imagen-background" src="images/wp-deskiced.gif" alt="">
-            <div class="header">
-                
-                <h1 class="line anim-typewriter">stay chillin', stay growing.</h1>
-                
-            </div>
-           
-        </div>
-
-        <a href="#down"><div class="scroll-down"></div></a>
-
-
-        <!-------------- hero section ends here -------------->
-
-        <!-------------- projects section starts here -------------->
+        <!----------------------------  header section starts here --------------- ------------->
         
-        <div class="container-fluid">
+        <div class="container-header">
+			<div class="wrapper-img">
+				<div class="box"></div>
+				<div>
+					<img class="image-header" src="images/tech5.jpg" />
+				</div>
+                
+			</div>
+			
+            <div class="loader">
+                <div class="ringOne ring">
+                      <img src="images/ring.png" alt="">
+                </div>
+                <div class="ringTwo ring">
+                      <img src="images/ring.png" alt="">
+                </div>
+          </div>
 
+			<div class="circle-shape-2"></div>
+			<div class="circle-shape-3"></div>
+			<div class="blocks">
+				<div class="block-1 block">A</div>
+				<div class="block-2 block">L</div>
+				<div class="block-3 block">E</div>
+				<div class="block-4 block">X</div>
+			</div>
+			
+				
+
+		</div>
+
+        <a class="scroll-down-a" href="#down">
+            <div class="scroll-down"></div>
+        </a>
+
+
+        <!----------------------------  header section ends here --------------- ------------->
+
+         <!-----------------------------           PROJECTS SECTION                -------------- --------------->
+         <div class="whitespace"></div>
+         <div class="whitespace"></div>
+         <div class="whitespace"></div>
+         <br><br>
+         <div class="container-fluid">
+            
             <br><br><br><br>
 
-            <h6>Selected projects</h6>
+            <h6 id="projects">Selected projects</h6>
 
             <div class="vertical"></div>
             <br>
@@ -121,7 +139,7 @@
                 <div class="col-lg-8"></div>
                 
                 <div class="col-lg-4 project project1 wow animate__animated animate__fadeInUp"
-                    onclick="location.href='project.html'"></div>
+                    onclick="location.href='project.html'" data-wow-delay="0.9s"></div>
                     
                 </div>
                     
@@ -131,8 +149,8 @@
             <div class="whitespace"></div>
 
             <div class="row">
-                <div class="col-lg-6 project project2 wow animate__animated animate__fadeInUp"
-                    onclick="location.href='project2.html'"> 
+                <div id="ione" class="col-lg-6 project project2 wow animate__animated animate__fadeInUp"
+                    onclick="location.href='project2.html'" data-wow-delay="1s"> 
                     </div></div>
                 
                 <div class="col-lg-6"></div>
@@ -144,7 +162,7 @@
                 <div class="col-lg-7"></div>
 
                 <div class="col-lg-4 project project3 wow animate__animated animate__fadeInUp"
-                    onclick="location.href='project3.html'"></div>
+                    onclick="location.href='project3.html'" data-wow-delay="1.1s"></div>
 
                 <div class="col-lg-1"></div>
             </div>
@@ -155,7 +173,7 @@
                 <div class="col-lg-1"></div>
 
                 <div class="col-lg-5 project project4 wow animate__animated animate__fadeInUp"
-                    onclick="location.href='project4.html'"></div>
+                    onclick="location.href='project4.html'" data-wow-delay="1.2s"></div>
 
                 <div class="col-lg-6"></div>
             </div>
@@ -163,11 +181,177 @@
             <div class="whitespace"></div>
         </div>
 
+    
+    
+
+        <!-----------------------------           PROJECTS SECTION ENDS               -------------- --------------->
+        <!-----------------------------           ABOUT SECTION                -------------- --------------->
+        <div class="whitespace"></div>
+        
+        
+        <section id="about">
+        
+
+        <!-------------- hero section stars here -------------->
+        <div class="container">
+            <div class="hero-content">
+                <br><br>
+
+                <div class="row">
+                    <div class="col-lg-7">
+                        <h3 class="wow animate__animated animate__fadeInUp" data-wow-delay="1.2s">about me.</h3><br>
+
+                        <p class="wow animate__animated animate__fadeInUp" data-wow-delay="0.5s">I'm a Front-End Developer studying in Technological National University, currently in the career technicature in programming.</p>
+                            <p class="wow animate__animated animate__fadeInUp" data-wow-delay="0.6s">Elegance and minimalism are what represents me. I began to approach the world of developing,
+                                fascinated by the works of the great designers of the time. These interests let me to develop a personal aesthetic and introduced me to the world of creative development.</p>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="about image wow animate__animated animate__fadeInUp"data-wow-delay="0.5s"></div>
+                            </div>     
+
+                            <div class="col-lg-5">
+                                <img src="images/lang/javascript.svg" height="70" width="60" alt=""
+                                class="html wow animate__animated animate__fadeInUp" data-wow-delay="1.5s">
+                                
+                                <img src="images/lang/css.svg" height="70" width="60" alt=""
+                                class="html wow animate__animated animate__fadeInUp" data-wow-delay="1.6s">
+                                    <img src="images/lang/html-5.svg" height="70" width="60" alt=""
+                                    class="html wow animate__animated animate__fadeInUp" data-wow-delay="1.7s">
+                                    <img src="images/lang/c sharp.svg" height="70" width="60" alt=""
+                                    class="html wow animate__animated animate__fadeInUp" data-wow-delay="1.8s">
+                                    <img src="images/lang/sql.svg" height="70" width="60" alt=""
+                                    class="html wow animate__animated animate__fadeInUp" data-wow-delay="1.9s">
+                            </div>   
+                </div>    
+                                  
+
+        <!-----------------------------           ABOUT SECTION ENDS               -------------- --------------->
+    </section>
+        <div class="whitespace"></div>
+        <div class="whitespace"></div>
+       <br><br>
+       <!-----------------------------           CONTACT SECTION STARTS               -------------- --------------->
+
+       <!-------------- hero section stars here say hello 👋👋 -------------->
+       <section id="contact" class="contact">
+       <div class="container">
+           <div class="hero-content">
+               <br><br>
+
+               <div class="row">
+                   <div class="col-lg-12">
+                       <h3 class="wow animate__animated animate__fadeInUp" data-wow-delay="1.2s">say hello 👋</h3><br>
+
+                       <p class="wow animate__animated animate__fadeInUp" data-wow-delay="1.3s">Tell me what's up, give me your feedback, or
+                           if you're
+                           interested to my work
+                       </p>
+
+                   </div>
+               </div>
+
+               <!-------------- hero section ends here -------------->
+               
+
+               <!----------------------------  form section starts here -------------- -------------->
+
+               <div class="container-fluid">
+                   <div class="row">
+                       <div class="col-lg-8">
+                           <form name="contact-form" id="contact-form" method="POST"
+                               action="https://formsubmit.co/alxfaml@gmail.com">
+
+                               <input type="hidden" name="_next" value="http://127.0.0.1:5500/#home">
+                               <input type="hidden" name="_captcha" value="false">
+                               <ul>
+                                   <li class="wow animate__animated animate__fadeInUp" data-wow-delay="1.4s">
+                                       <label for="contact-name">Name :</label>
+                                       <div class="textarea wow animate__animated animate__fadeInUp">
+                                           <input type="text" name="contact-name" id="contact-name" value="" required>
+                                       </div>
+                                   </li>
+
+                                   <li class="wow animate__animated animate__fadeInUp" data-wow-delay="1.5s">
+                                       <label for="contact-email">Email :</label>
+                                       <div class="textarea wow animate__animated animate__fadeInUp">
+                                           <input type="email" name="contact-email" id="contact-email" value=""
+                                               required>
+                                       </div>
+                                   </li>
+
+                                   <li class="wow animate__animated animate__fadeInUp" data-wow-delay="1.6s">
+                                       <label for="contact-message">Message :</label>
+                                       <div class="textarea wow animate__animated animate__fadeInUp">
+                                           <textarea type="email" name="contact-message" id="contact-message" rows="6"
+                                               value="" required></textarea>
+                                       </div>
+                                   </li>
+
+                               </ul>
+
+                               <button onclick="Update()" type="submit" name="contact-submit"
+                                   id="contact-submit" class="send wow animate__animated animate__fadeInUp" data-wow-delay="2.3s">Send
+                                   Message</button>
+
+                           </form>
+                           <script type="text/javascript">
+                               
+                               var timeout;
+                              
+                               function Update() {
+                                   
+                                  
+                                   var name = document.getElementById('contact-name').value;
+                                   var email = document.getElementById('contact-email').value;
+                                   var message = document.getElementById('contact-message').value;
+
+                                   if (name !== "" && email !== "" && message !== "") {
+                                       
+                                       timeout = setTimeout(send, 8000);
+
+                                       Swal.fire({
+                                       title: '',
+
+                                       width: 300,
+                                       padding: '2em',
+                                       background: ' url(/images/macri.gif) no-repeat ',
+
+                                       backdrop: `
+                                                 rgba(60,60,60,0.4)
+
+                                                 left top
+                                                 no-repeat
+                                                 `,
+                                            icon: 'success',  
+
+                                       showConfirmButton: false,
+                                       timer: 1500         
+                                   })
+                                       
+                                   } else {
+                                       
+                                       Swal.fire({
+                                           icon: 'error',
+                                           title: 'Oops...',
+                                           text: 'hay un error por ahi!',
+
+                                       })
+                                   } }
+                                   function send() {
+                                           document.getElementById('contact-form').submit();
+                                       }
+
+                           </script>
 
 
-        <!-------------- projects section ends here -------------->
-
-        <!-------------- footer starts here -------------->
+                       </div>
+                   </div>
+               </div>
+               </div>
+            </section>
+               <!-------------- form section ends here -------------->
+               <div class="whitespace"></div>
+        <!---------------          FOOTER                --------------->
         <div class="footer">
             <div class="container">
                 <br><br>
@@ -245,7 +429,7 @@
 
 
 
-        <!-------------- footer ends here -------------->
+        <!---------------          FOOTER ENDS                --------------->
 
         <!-------------- greensock cdn -------------->
 
@@ -272,30 +456,98 @@
 
             //<!-------------- nav animation starts here -------------->
             TweenMax.from("#brand", 1, {
-                delay: 0.4,
+                delay: 3, //0.4
                 y: 10,
                 opacity: 0,
                 ease: Expo.easeIn0ut
             })
 
             TweenMax.staggerFrom("#menu li a", 1, {
-                delay: 0.4,
+                delay: 3.1, //0.4
                 opacity: 0,
                 ease: Expo.easeIn0ut
             }, 0.1);
-
-
+            TweenMax.staggerFrom(".loader", 1, {
+                delay: 3.2, //0.4
+                opacity: 0,
+                ease: Expo.easeIn0ut
+            }, 0.1);
+            TweenMax.staggerFrom(".scroll-down-a", 1, {
+                delay: 3.3, //0.4
+                opacity: 0,
+                ease: Expo.easeIn0ut
+            }, 0.1);
+            TweenMax.staggerFrom(".span", 1, {
+                delay: 3.1, //0.4
+                opacity: 0,
+                ease: Expo.easeIn0ut
+            }, 0.1);
             //<!-------------- nav navigation ends here -------------->
+
+            //----------------- header animation starts here----------------//
+            TweenMax.to(".block-1", 2, {
+				x: "-110", //-180
+				y: "-100",
+				scale: "2.4",
+				ease: Expo.easeInOut,
+                delay: 1
+                
+			});
+
+			TweenMax.to(".block-2", 2, {
+				x: "-110", //-180
+				y: "200",
+				scale: "1.2",
+				ease: Expo.easeInOut,
+                delay: 1
+
+			});
+
+			TweenMax.to(".block-3", 2, {
+				x: "170",
+				y: "-160",   //-240
+				scale: "1.6",  
+				ease: Expo.easeInOut,
+                delay: 1
+
+			});
+
+			TweenMax.to(".block-4", 2, {
+				x: "170", //280
+				y: "90",  //240
+				scale: "0.8",
+				ease: Expo.easeInOut,
+                delay: 1
+
+			});
+
+			TweenMax.to(".box", 2.4, {
+				y: "-100%",
+				ease: Expo.easeInOut,
+                delay: 1
+
+			});
+            
+			
+			TweenMax.from(".circle-shape-2", 2.4, {
+				scale: "0",
+				ease: Expo.easeInOut,
+                delay: 1
+
+			});
+			TweenMax.from(".circle-shape-3", 2.4, {
+				scale: "0",
+				ease: Expo.easeInOut,
+                delay: 1
+
+			});
+           
+
+            //----------------- header animation ends here----------------//
+            
             new WOW().init();
 
-            //<!-------------- scroll fade -------------->
-            let image = document.querySelector('img');
            
-            window.addEventListener('scroll', function () {
-
-                let value = 1 + window.scrollY / -600;
-                image.style.opacity = value;
-            })
         </script>
         
 
@@ -316,10 +568,39 @@
                 behavior: 'smooth'
             })
         } 
+    </script>
+        <!-- nav hide -->
+        <script type="text/javascript">
+        $(function(){
+            var scroll = $(document).scrollTop();
+            var navHeight = $('.nav-area').outerHeight();
+
+            $(window).scroll(function(){
+                var scrolled = $(document).scrollTop();
+                
+                if (scrolled > navHeight) {
+                    $('.nav-area').addClass('animate');
+                } else {
+                    $('.nav-area').removeClass('animate');
+                }
+                if (scrolled > scroll) {
+                    $('.nav-area').removeClass('sticky');
+                } else {
+                    $('.nav-area').addClass('sticky');
+                    
+                }
+                scroll = $(document).scrollTop();
+            });
+        });
 
         </script>
+        
+
+
+
         <div id="down"></div>
         <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </body>
 
 </html>
