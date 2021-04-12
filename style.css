@@ -424,6 +424,12 @@ h6 {
     .vertical {
         display: none;
     }
+    .project1:hover,
+    .project2:hover,
+    .project3:hover,
+    .project4:hover {
+        transform: scale(1.001);
+    }
 
     .project1::after,
     .project2::after,
@@ -783,7 +789,11 @@ textarea:focus {
     /* #a83e0c;  */
     border-radius: 100%;
     z-index: 0;
+    opacity: 1;
 }
+.circle-shape-2::before {
+    opacity: 0;
+} 
 
 .circle-shape-3 {
     position: absolute;
@@ -796,7 +806,11 @@ textarea:focus {
     /* #a83e0c;  */
     border-radius: 100%;
     z-index: 0;
+    opacity: 1;
 }
+.circle-shape-3::before {
+    opacity: 0;
+} 
 
 .wrapper-img {
     overflow: hidden;
@@ -850,7 +864,7 @@ textarea:focus {
         width: 50%;
         height: 50%;
     }
-
+ 
     .wrapper-img {
         overflow: hidden;
         position: absolute;
@@ -864,9 +878,7 @@ textarea:focus {
         height: 130%;
         object-fit: cover;
     }
-    .image-header:hover {
-        display: none;
-    }
+   
     .box{
         background: #0f0f0f;
         /* #202217;  */
