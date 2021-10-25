@@ -274,9 +274,11 @@ nav{
 .home__blob{
     width: 200px;
     fill: var(--first-color);
+    
+    
 }
 .home__blob-img{
-    width: 200px; /* 170 */
+    width: 300px; /* 170 */
 }
 .home__data{
     grid-column: 1/3;
